@@ -64,12 +64,12 @@ class Light extends ElectricalAppliance{
 const electricLamp = new Light(220, 30, 0.18, 'Osram', 'off', 5)
 const laptop = new PortableElectronics(220, 2000, 2, 'Macbook', 'on', 'off');
 
-console.log(electricLamp.getTimerOff(5));
-console.log(laptop.getTurnOn('off'));
-console.log(laptop.getPower(220, 2));
-console.log(electricLamp.getPower(220, 0.18));
-console.log(laptop.checkPower('on'));
-console.log(electricLamp.checkPower('off'));
+electricLamp.getTimerOff(5);
+laptop.getTurnOn('off');
+laptop.getPower(220, 2);
+electricLamp.getPower(220, 0.18);
+laptop.checkPower('on');
+electricLamp.checkPower('off');
 
 
 
