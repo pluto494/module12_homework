@@ -9,7 +9,7 @@ function ElectricalAppliance(nutrition, weight, currentStrength, name, plugIn) {
 
 // рассчет потребляемой мощности
 ElectricalAppliance.prototype.getPower = function(nutrition, currentstrength) {
-    result = nutrition * currentstrength;
+    let result = nutrition * currentstrength;
     console.log(`Потребляемая мощность ${result} Вт.`)
 };
 
@@ -35,15 +35,15 @@ PortableElectronics.prototype = new ElectricalAppliance();
 
 
 //
-function light (timer){
+function Light (timer){
     this.timer = timer
 };
 
-light.prototype = new ElectricalAppliance();
+Light.prototype = new ElectricalAppliance();
 //
 
 //
-const electricLamp = new light()
+const electricLamp = new Light()
 const laptop = new PortableElectronics();
 //
 
@@ -74,7 +74,7 @@ laptop.getTurnOn('off')
 
 
 // метод лампы
-light.prototype.getTimerOff = function(seconds) {
+Light.prototype.getTimerOff = function(seconds) {
     let timerId = setInterval(function() {
         console.log(seconds);
         if (seconds == 0) {
@@ -88,17 +88,6 @@ electricLamp.getTimerOff(5)
 //
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Всё верно, но есть пару замечаний по коду:
+// 1. Не забывайте добавлять ключевые слова к переменным (let или const), чтобы они не были шглобальными без необходимости. Выше исправила
+// 2. Функции-конструкторы должны писаться с большой буквы. Это не приведет к ошибке на уровне кода, но для большей понятности и читабельности кода лучше следовать этому соглашению
